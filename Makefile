@@ -48,6 +48,7 @@ endif
 rclone:
 	go build -v --ldflags "-s -X github.com/rclone/rclone/fs.Version=$(TAG)" $(BUILDTAGS) $(BUILD_ARGS)
 	mkdir -p `go env GOPATH`/bin/
+	mkdir -p `go env GOPATH`/bin/temp/
 	cp -av gclone`go env GOEXE` `go env GOPATH`/bin/gclone`go env GOEXE`.new
 	mv -v `go env GOPATH`/bin/gclone`go env GOEXE`.new `go env GOPATH`/bin/gclone`go env GOEXE`
 	
